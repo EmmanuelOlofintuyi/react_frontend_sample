@@ -1,0 +1,60 @@
+{
+    "posts": [
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": "ice cream"
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": "ice cream"
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": "ice cream"
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": "ice cream"
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": "ice cream"
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": ["ice cream"]
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": ["ice cream"]
+        },
+
+        {
+        "id": 1,
+        "name": "Jake",
+        "title": "rocky road",
+        "body": ["ice cream"]
+        }
+
+    ]
+}

@@ -1,0 +1,10 @@
+
+.border{
+  margin-left: 25px;
+}
+
+.Posts{
+    border: 3px solid orange;
+    margin-left: 100 px;
+    width: 75%;
+  }
