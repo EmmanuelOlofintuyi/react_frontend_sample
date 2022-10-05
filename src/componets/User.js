@@ -1,19 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import './user.css'
-import {Browser as Router, Link, Route} from 'react-router-dom'
 import Post from './Post'
 
+// 
 
-const User = ({id, name, title, post}) => {
+
+
+
+// export const getStaticPaths = async () => {
+//     const res = await fetch('https://jsonplaceholder.typicode.com/users/posts')
+//     const data = await res.json()
+
+//     const paths = data.map(users => {
+//         return{
+//             params:{id: users.id.toString() }
+//         }
+//     })
+//     return{
+//         paths,
+//         fallback: false
+//     }
+// }
+
+// export const getStaticProps = async (context) =>{
+//     const id = context.params.id;
+//     const res = await fetch('https://jsonplaceholder.typicode.com/users/'+ id + '/posts')
+//     const data = await res.json();
+//     return{
+//         props: {users: data}
+//     }
+// }
+
+
+
+const Home = () => {
+    const {id} = useParams()
+    const [posts, setPosts] = useState([]);
+
+    const fetchData = async () => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+            .then((res) => res.json())
+            .then((data) => setPosts(data))
+            .catch((err) => {
+            console.log(err)
+        })
+      }
+      console.log(posts)
+      
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
     return (
         <div className='border'>
-           <Link to={`./Post/${id}`} key={id}>{name}</Link>
             <div className='Posts'>
-                <p><span>{title}</span></p>
-                <p>Here's a recipe for the best <span>{post}</span></p>
-                <p> </p>
+                {posts && 
+                    posts.map((post) =>  (
+                    <Post key={post.id} id={post.id} title={post.title} body={post.body}/>
+                ))}
             </div>
         </div>
     )
 }
-export default User;
+
+export default Home;
